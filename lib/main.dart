@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weatherapp/constants.dart';
 import 'package:weatherapp/modules/home/binding.dart';
+import 'package:weatherapp/modules/home/view.dart';
 import 'package:weatherapp/modules/onboarding/view.dart';
 import 'package:weatherapp/modules/splash/view.dart';
 
