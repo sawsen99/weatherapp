@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weatherapp/core/utils/extensions.dart';
-import 'package:weatherapp/core/values/colors.dart';
 import 'package:weatherapp/modules/home/binding.dart';
 import 'package:weatherapp/modules/home/view.dart';
 import 'package:weatherapp/modules/onboarding/controller.dart';
