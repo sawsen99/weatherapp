@@ -118,7 +118,7 @@ class OnboardingScreen extends StatelessWidget {
                     // padding: const EdgeInsets.all(1.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: primaryColor,
+                      color: Colors.blue,
                     ),
                     child: IconButton(
                         onPressed: () {

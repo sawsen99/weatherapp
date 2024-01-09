@@ -29,7 +29,7 @@ class OnboardingController extends GetxController {
       width: isActive ? 10.0.wp : 5.0.wp,
       margin: EdgeInsets.only(right: 1.5.wp),
       decoration: BoxDecoration(
-        color: primaryColor,
+        color: Colors.blue,
         borderRadius: BorderRadius.circular(5.0),
       ),
     );

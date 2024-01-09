@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
   String? city;
   String? searchText;
-
+  bool is_light = true;
   bool is_loading = true;
 
   CurrentWeatherData currentWeatherData = CurrentWeatherData();
@@ -29,6 +29,11 @@ class HomeController extends GetxController {
   void initState() {
     getCurrentWeatherData();
     getFiveDaysData();
+  }
+
+  void changeTheme() {
+    is_light ? is_light = false : is_light = true;
+    update();
   }
 
   void getCurrentWeatherData() {

@@ -8,7 +8,7 @@ import 'package:weatherapp/core/utils/extensions.dart';
 import 'package:weatherapp/core/values/colors.dart';
 import 'package:weatherapp/modules/home/controller.dart';
 import 'package:weatherapp/modules/home/widgets/days_list.dart';
-import 'package:weatherapp/modules/home/widgets/five_days_table.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeScreen extends GetView<HomeController> {
   // HomeController homeController = Get.put(HomeController(city: 'boumerdes'));
@@ -16,22 +16,31 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-            colors: [
-              Color(0xFFc4e0e5), // Color #c4e0e5
-              Color(0xFF4ca1af), // Color #4ca1af
-            ],
+      body: GetBuilder<HomeController>(builder: (controller) {
+        return Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            gradient: controller.is_light
+                ? LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      lightBckgColor2, // Color #c4e0e5
+                      lightBckgColor1, // Color #4ca1af
+                    ],
+                  )
+                : LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      darkBckgdColor2, // Color #c4e0e5
+                      darkBckgdColor1, // Color #4ca1af
+                    ],
+                  ),
           ),
-        ),
-        child: SafeArea(
-          child: GetBuilder<HomeController>(builder: (controller) {
-            return SingleChildScrollView(
+          child: SafeArea(
+            child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,8 +55,13 @@ class HomeScreen extends GetView<HomeController> {
                       },
                       itemBuilder: (context) => [
                         PopupMenuItem(
-                          value: "Theme ",
-                          child: Text("Theme"),
+                          //value: "Theme ",
+                          child: controller.is_light
+                              ? Text("Turn to dark theme")
+                              : Text("Turn to light theme"),
+                          onTap: () {
+                            controller.changeTheme();
+                          },
                         ),
                       ],
                     ),
@@ -70,7 +84,10 @@ class HomeScreen extends GetView<HomeController> {
                         hintText: 'Search a city',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(
+                              color: controller.is_light
+                                  ? lightTextColor
+                                  : darkTextColor),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -90,7 +107,9 @@ class HomeScreen extends GetView<HomeController> {
                           width: 100.0.wp,
                           height: 50.0.hp,
                           child: Card(
-                            color: Colors.white,
+                            color: controller.is_light
+                                ? Colors.white
+                                : darkBckgdColor1,
                             elevation: 5,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25),
@@ -114,7 +133,9 @@ class HomeScreen extends GetView<HomeController> {
                                               .textTheme
                                               .caption!
                                               .copyWith(
-                                                color: Colors.black87,
+                                                color: controller.is_light
+                                                    ? Colors.black87
+                                                    : darkTextColor,
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'flutterfonts',
@@ -128,7 +149,9 @@ class HomeScreen extends GetView<HomeController> {
                                               .textTheme
                                               .caption!
                                               .copyWith(
-                                                color: Colors.black45,
+                                                color: controller.is_light
+                                                    ? Colors.black45
+                                                    : darkTextColor,
                                                 fontSize: 14,
                                                 fontFamily: 'flutterfonts',
                                               ),
@@ -144,11 +167,11 @@ class HomeScreen extends GetView<HomeController> {
                                     children: <Widget>[
                                       Container(
                                         child: SizedBox(
-                                          width: 120,
-                                          height: 140,
-                                          child: LottieBuilder.asset(
-                                              Images.cloudyAnim),
-                                        ),
+                                            width: 120,
+                                            height: 140,
+                                            child: Image.asset(
+                                              "assets/weather/${controller.currentWeatherData.weather![0].icon.toString()}.png",
+                                            )),
                                         // 'wind ${controller.currentWeatherData.wind!.speed} m/s',
                                       ),
                                       Container(
@@ -160,7 +183,9 @@ class HomeScreen extends GetView<HomeController> {
                                                   .textTheme
                                                   .caption!
                                                   .copyWith(
-                                                    color: Colors.black45,
+                                                    color: controller.is_light
+                                                        ? Colors.black45
+                                                        : darkTextColor,
                                                     fontSize: 20,
                                                     fontFamily: 'flutterfonts',
                                                   ),
@@ -172,7 +197,9 @@ class HomeScreen extends GetView<HomeController> {
                                                   .textTheme
                                                   .headline2!
                                                   .copyWith(
-                                                      color: Colors.black87,
+                                                      color: controller.is_light
+                                                          ? Colors.black87
+                                                          : darkTextColor,
                                                       fontFamily:
                                                           'flutterfonts'),
                                             ),
@@ -182,7 +209,9 @@ class HomeScreen extends GetView<HomeController> {
                                                   .textTheme
                                                   .caption!
                                                   .copyWith(
-                                                    color: Colors.black45,
+                                                    color: controller.is_light
+                                                        ? Colors.black45
+                                                        : darkTextColor,
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold,
                                                     fontFamily: 'flutterfonts',
@@ -197,7 +226,9 @@ class HomeScreen extends GetView<HomeController> {
                                   Container(
                                     padding: EdgeInsets.symmetric(vertical: 8),
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF4ca1af).withOpacity(0.3),
+                                      color: controller.is_light
+                                          ? lightBckgColor1.withOpacity(0.3)
+                                          : darkBckgdColor2.withOpacity(0.7),
                                       borderRadius: BorderRadius.circular(20),
                                       boxShadow: [
                                         BoxShadow(
@@ -219,17 +250,22 @@ class HomeScreen extends GetView<HomeController> {
                                               height: 30,
                                             ),
                                             Text(
-                                              ' ${controller.currentWeatherData.wind!.speed} %',
-                                              style: const TextStyle(
+                                              ' ${controller.currentWeatherData.main!.humidity.toString()} %',
+                                              style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
+                                                color: controller.is_light
+                                                    ? lightTextColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                             Text(
                                               'Rain',
                                               style: TextStyle(
                                                 fontSize: 12,
-                                                color: blackColor,
+                                                color: controller.is_light
+                                                    ? blackColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                           ],
@@ -242,17 +278,22 @@ class HomeScreen extends GetView<HomeController> {
                                               height: 30,
                                             ),
                                             Text(
-                                              ' ${controller.currentWeatherData.wind!.speed} %',
-                                              style: const TextStyle(
+                                              ' ${controller.currentWeatherData.wind!.speed} Km/h',
+                                              style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
+                                                color: controller.is_light
+                                                    ? lightTextColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                             Text(
                                               'Wind speed',
                                               style: TextStyle(
                                                 fontSize: 12,
-                                                color: blackColor,
+                                                color: controller.is_light
+                                                    ? blackColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                           ],
@@ -265,24 +306,32 @@ class HomeScreen extends GetView<HomeController> {
                                               height: 30,
                                             ),
                                             Text(
-                                              ' ${controller.currentWeatherData.wind!.speed} %',
-                                              style: const TextStyle(
+                                              ' ${controller.currentWeatherData.main!.humidity.toString()} %',
+                                              style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
+                                                color: controller.is_light
+                                                    ? lightTextColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                             Text(
                                               'Humidity',
                                               style: TextStyle(
                                                 fontSize: 12,
-                                                color: blackColor,
+                                                color: controller.is_light
+                                                    ? blackColor
+                                                    : darkTextColor,
                                               ),
                                             ),
                                           ],
                                         ),
                                       ],
                                     ),
-                                  )
+                                  ).animate().fadeIn(
+                                        duration:
+                                            const Duration(milliseconds: 1000),
+                                      ),
                                 ],
                               ),
                             ),
@@ -292,13 +341,15 @@ class HomeScreen extends GetView<HomeController> {
                   //FiveDaysTable(fiveDayData: controller.fiveDaysData),
                 ],
               ),
-            );
-          }),
-        ),
-      ),
+            ),
+          ),
+        );
+      }),
     );
   }
 }
+
+
 
 
 
