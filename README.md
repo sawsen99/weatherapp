@@ -1,16 +1,22 @@
-# weatherapp_starter_project
+State Management - GetX:
+Utilized GetX for state management due to its simplicity, reducing boilerplate code and enhancing productivity.
+Leveraged its reactive nature for optimal performance, updating UI components only when the state changes.
 
-A new Flutter project.
+LottiePackage Integration:
+Implemented LottiePackage to incorporate animated lotties into the design, enhancing visual appeal.
 
-## Getting Started
+Error Handling - connectivity_plus Package:
+Utilized connectivity_plus package to manage network errors effectively, providing a seamless user experience.
 
-This project is a starting point for a Flutter application.
+Search Functionality Implementation:
+Implemented a search method enabling users to look for specific cities worldwide, enhancing usability.
 
-A few resources to get you started if this is your first Flutter project:
+Dark Theme Implementation:
+Integrated a dark theme feature, offering users an alternative visual experience.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Project Architecture:
+Structured the project's folders following a clean and easily understandable architecture.
+Separated views into dedicated classes for screen representation, controllers for app logic, and models/utils for improved code organization.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+API Models and Repository - OpenWeatherMap:
+Developed API models and repository using data from OpenWeatherMap, ensuring robust data handling and access.
