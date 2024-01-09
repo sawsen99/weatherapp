@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weatherapp/core/utils/extensions.dart';
-import 'package:weatherapp/core/values/colors.dart';
 import 'package:weatherapp/modules/home/view.dart';
 
 class OnboardingController extends GetxController {
@@ -11,7 +10,7 @@ class OnboardingController extends GetxController {
   List<Widget> buildIndicator() {
     List<Widget> indicators = [];
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 4; i++) {
       if (currentIndex == i) {
         indicators.add(_indicator(true));
       } else {
@@ -29,7 +28,7 @@ class OnboardingController extends GetxController {
       width: isActive ? 10.0.wp : 5.0.wp,
       margin: EdgeInsets.only(right: 1.5.wp),
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Color.fromARGB(255, 122, 52, 134),
         borderRadius: BorderRadius.circular(5.0),
       ),
     );

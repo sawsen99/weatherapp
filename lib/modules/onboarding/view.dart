@@ -5,6 +5,7 @@ import 'package:weatherapp/core/values/colors.dart';
 import 'package:weatherapp/modules/home/binding.dart';
 import 'package:weatherapp/modules/home/view.dart';
 import 'package:weatherapp/modules/onboarding/controller.dart';
+import 'package:lottie/lottie.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
@@ -16,10 +17,10 @@ class OnboardingScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
-        toolbarHeight: 15.0.hp,
+        toolbarHeight: 10.0.hp,
         actions: [
           Container(
-            padding: EdgeInsets.only(right: 5.0.wp, top: 5.0.wp),
+            padding: EdgeInsets.only(right: 5.0.wp, top: 2.0.wp),
             child: InkWell(
               onTap: () {
                 Get.off(
@@ -33,7 +34,7 @@ class OnboardingScreen extends StatelessWidget {
                 'Skip',
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 12.0.sp,
+                  fontSize: 14.0.sp,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -54,15 +55,53 @@ class OnboardingScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/onb2.png'),
+                    Lottie.asset('assets/lotties/splash2.json'),
                     const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
                       child: Text(
-                        "Wherever you are in the world, know the climate of your city",
+                        "Is it raining ?",
                         style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 122, 52, 134),
+                            fontFamily: 'flutterfonts'),
+                      ),
+                    )
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Lottie.asset('assets/lotties/snow.json'),
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20.0, vertical: 40),
+                      child: Text(
+                        "Snowing ?",
+                        style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 122, 52, 134),
+                            fontFamily: 'flutterfonts'),
+                      ),
+                    )
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Lottie.asset('assets/lotties/sunny.json'),
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 40),
+                      child: Text(
+                        "Or a beautiful sunny day?",
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 122, 52, 134),
+                            fontFamily: 'flutterfonts'),
                       ),
                     )
                   ],
@@ -72,29 +111,16 @@ class OnboardingScreen extends StatelessWidget {
                   children: [
                     Image.asset('assets/images/onb2.png'),
                     const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
                       child: Text(
-                        "Wherever you are in the world, know the climate of your city",
+                        "Wherever you are, discover today's weather news in your area",
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset('assets/images/onb2.png'),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Text(
-                        "Wherever you are in the world, know the climate of your city",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 122, 52, 134),
+                            fontFamily: 'flutterfonts'),
                       ),
                     )
                   ],
@@ -118,7 +144,7 @@ class OnboardingScreen extends StatelessWidget {
                     // padding: const EdgeInsets.all(1.0),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 122, 52, 134),
                     ),
                     child: IconButton(
                         onPressed: () {

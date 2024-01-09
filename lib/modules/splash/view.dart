@@ -10,31 +10,23 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Weather Today",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 116, 71, 199),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Lottie.asset(
-              'assets/lotties/cloudy.json',
-              height: 370,
-              width: double.infinity,
-              frameRate: FrameRate(70),
-              animate: true,
-              repeat: true,
-            ),
-          ],
-        )),
+      body: Center(
+        child: Container(
+          height: 150,
+          width: 150,
+          color: Colors.white,
+          child: Align(
+              alignment: Alignment.center,
+              child: Lottie.asset(
+                'assets/lotties/sun.json',
+                //height: 150,
+
+                width: double.infinity,
+                frameRate: FrameRate(70),
+                animate: true,
+                repeat: true,
+              )),
+        ),
       ),
     );
   }
