@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/',
-          page: () => SplashScreen(),
+          page: () => HomeScreen(),
           binding: HomeBinding(),
         )
       ],
