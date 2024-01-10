@@ -23,3 +23,6 @@ Developed API models and repository using data from OpenWeatherMap, ensuring rob
 
 Splash Screen and Onboarding Screens:
 Implemented a splash screen and onboarding screens to introduce users to the application's concept, enhancing the user's initial experience.
+
+Screens:
+![onbord_1](https://github.com/sawsen99/weatherapp/assets/103581439/a9c1940d-c6da-4b9c-8dfa-b5b2a423d164)
