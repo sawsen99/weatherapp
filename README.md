@@ -28,3 +28,11 @@ Implemented a splash screen and onboarding screens to introduce users to the app
 I drew inspiration from various web designs to craft a unique UI.
 
 weather API link: https://openweathermap.org/api
+
+Screens:
+![onbord_1](https://github.com/sawsen99/weatherapp/assets/103581439/a9c1940d-c6da-4b9c-8dfa-b5b2a423d164)
+![onbord_2](https://github.com/sawsen99/weatherapp/assets/103581439/41c98911-573a-456f-a080-819f8482343d)
+![onbord_3](https://github.com/sawsen99/weatherapp/assets/103581439/e99b346b-608a-4584-8e33-596ad3cad828)
+![onbord_4](https://github.com/sawsen99/weatherapp/assets/103581439/bd3b7cf2-edea-44a1-9406-d6eea5cac100)
+![light_screen](https://github.com/sawsen99/weatherapp/assets/103581439/1da7a6cd-b69e-41f3-b680-be884c16550b)
+![dark_screen](https://github.com/sawsen99/weatherapp/assets/103581439/920cfec6-ed5f-40d6-8f3b-7962c63c21a9)
