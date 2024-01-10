@@ -20,3 +20,6 @@ Separated views into dedicated classes for screen representation, controllers fo
 
 API Models and Repository - OpenWeatherMap:
 Developed API models and repository using data from OpenWeatherMap, ensuring robust data handling and access.
+
+Splash Screen and Onboarding Screens:
+Implemented a splash screen and onboarding screens to introduce users to the application's concept, enhancing the user's initial experience.
