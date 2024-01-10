@@ -23,3 +23,8 @@ Developed API models and repository using data from OpenWeatherMap, ensuring rob
 
 Splash Screen and Onboarding Screens:
 Implemented a splash screen and onboarding screens to introduce users to the application's concept, enhancing the user's initial experience.
+
+
+I drew inspiration from various web designs to craft a unique UI.
+
+weather API link: https://openweathermap.org/api
