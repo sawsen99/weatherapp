@@ -26,3 +26,4 @@ Implemented a splash screen and onboarding screens to introduce users to the app
 
 Screens:
 ![onbord_1](https://github.com/sawsen99/weatherapp/assets/103581439/a9c1940d-c6da-4b9c-8dfa-b5b2a423d164)
+![onbord_2](https://github.com/sawsen99/weatherapp/assets/103581439/41c98911-573a-456f-a080-819f8482343d)
