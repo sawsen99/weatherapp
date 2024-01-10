@@ -29,3 +29,4 @@ Screens:
 ![onbord_2](https://github.com/sawsen99/weatherapp/assets/103581439/41c98911-573a-456f-a080-819f8482343d)
 ![onbord_3](https://github.com/sawsen99/weatherapp/assets/103581439/e99b346b-608a-4584-8e33-596ad3cad828)
 ![onbord_4](https://github.com/sawsen99/weatherapp/assets/103581439/bd3b7cf2-edea-44a1-9406-d6eea5cac100)
+![light_screen](https://github.com/sawsen99/weatherapp/assets/103581439/1da7a6cd-b69e-41f3-b680-be884c16550b)
